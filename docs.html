@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chess, Chessboard, Javascript, Play Chess, Javascript Chess, three.js, chessboard.js, chessboard3.js">
-    <title>chessboard3.js</title>
+    <meta name="keywords" content="Chess, ChessBoard3, Javascript, Play Chess, Javascript Chess, three.js, ChessBoard3.js, ChessBoard33.js">
+    <title>ChessBoard33.js</title>
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
@@ -16,26 +16,26 @@
 </head>
 <body onload="prettyPrint()">
 <header id="header">
-    <h1>chessboard3.js</h1>
+    <h1>ChessBoard33.js</h1>
     <nav>
         <ul>
             <li><a href="index.html"><input type="button" class="blueButton" value="Home"></a></li>
             <li><a href="docs.html"><input type="button" class="blueButton" value="Documentation"></a></li>
             <li><a href="play.html"><input type="button" class="blueButton" value="Play"></a></li>
-            <li><a href="releases/0.1.3/chessboard3js-0.1.3.zip"><input type="button" class="blueButton" value="Download"></a></li>
+            <li><a href="releases/0.1.3/ChessBoard33js-0.1.3.zip"><input type="button" class="blueButton" value="Download"></a></li>
         </ul>
     </nav>
 </header>
 <div class="banner">
-    <p>This is the same API as <a href="http://chessboardjs.com">chessboard.js</a>, with some extensions highlighted below.</p>
+    <p>This is the same API as <a href="http://ChessBoard3js.com">ChessBoard3.js</a>, with some extensions highlighted below.</p>
 </div>
 <article>
     <h2>Dependencies</h2>
     <p>Requires the following libraries: <a href="https://github.com/mrdoob/three.js/releases/tag/r80">three.js</a>, revision 80; and optionally OrbitControls.js (included with three.js download)</p>
     <p>Also needs JSON files for piece set mesh data and font mesh data, in folder /assets.</p>
     <h2>Configuration</h2>
-    <p>Pass a configuration object to the ChessBoard3 constructor:</p>
-    <div style="margin-left:200px;margin-right:200px"><pre class="prettyprint">var board = new ChessBoard3('some_div_id', config);</pre></div>
+    <p>Pass a configuration object to the ChessBoard33 constructor:</p>
+    <div style="margin-left:200px;margin-right:200px"><pre class="prettyprint">var board = new ChessBoard33('some_div_id', config);</pre></div>
     <p>The <span>config</span> object can have the following properties and methods:</p>
     <table>
         <tr>
@@ -94,7 +94,7 @@
                 <span>'assets/fonts/helvetiker_regular.typeface.json'</span>
             </td>
             <td>
-                URL path to the three.js font file. This setting is specific to chessboard3.js.
+                URL path to the three.js font file. This setting is specific to ChessBoard33.js.
             </td>
         </tr>
         <tr>
@@ -139,12 +139,12 @@
             </td>
             <td>
                 A template string for the URL of the piece mesh files, where <span>'{piece}'</span> gets replaced by <span>'K'</span>, <span>'Q'</span>, <span>'R'</span>, <span>'B'</span>, or <span>'P'</span>.<br/>
-                <p>This setting is specific to chessboard3.js. The JSON files required are K.json, Q.json, R.json, B.json, N.json, and P.json, and each specifies the geometry of one type of piece, regardless of color, in three.js format.</p>
-                <p>In chessboard.js the analogous setting is <span class="highlight">pieceTheme</span> for specifying the location of 12 image files- 'wK.png', 'bQ.png', etc.)
-                    A configuration object can have both of these set; chessboard.js will ignore one and chessboard3.js will ignore the other.</p>
+                <p>This setting is specific to ChessBoard33.js. The JSON files required are K.json, Q.json, R.json, B.json, N.json, and P.json, and each specifies the geometry of one type of piece, regardless of color, in three.js format.</p>
+                <p>In ChessBoard3.js the analogous setting is <span class="highlight">pieceTheme</span> for specifying the location of 12 image files- 'wK.png', 'bQ.png', etc.)
+                    A configuration object can have both of these set; ChessBoard3.js will ignore one and ChessBoard33.js will ignore the other.</p>
                 <p>If <span>pieceSet</span> is a function, the only argument is a one character piece code. The function should return a URL
                     to the JSON file.</p>
-                <p>NOTE: At present chessboard3.js only loads mesh geometries from the JSON files, without any added textures. It then slaps white and black PhongMaterials on
+                <p>NOTE: At present ChessBoard33.js only loads mesh geometries from the JSON files, without any added textures. It then slaps white and black PhongMaterials on
                 the geometries to create the meshes.</p>
                 <p>Squares are 2x2, so the bounding box for a piece mesh should be restricted to [-0.5, 0.5] for x and y; the board itself lies on the z=0 plane.</p>
             </td>
@@ -175,7 +175,7 @@
                 N/A
             </td>
             <td>
-                The initial position of the board specified in chessboard.js format.<br>
+                The initial position of the board specified in ChessBoard3.js format.<br>
                 The object would typically look like this:<br>
                 <span>{ a4: 'wK', c4: 'bK', a7: 'wR'}</span>
                 Keys are squares (<span>'a1'</span> through <span>'a8'</span>, <span>'h1'</span> through <span>'h8'</span>, etc.)
@@ -208,7 +208,7 @@
             </td>
             <td>
                 Determines whether files and ranks are labeled (files a through h, ranks 1 through 8)<br/>
-                If set to <span>true</span> and <span>helvetiker_regular.typeface.js</span> has not been loaded, chessboard3.js will report an error and continue.
+                If set to <span>true</span> and <span>helvetiker_regular.typeface.js</span> has not been loaded, ChessBoard33.js will report an error and continue.
             </td>
         </tr>
         <tr>
@@ -686,7 +686,7 @@
                         piece code
                     </li>
                 </ol>
-                WARNING: Some browsers will not actually render the piece in its new location until this method returns, so do not run off with the event thread at this point! Post any long synchronous routines using <span>setTimeout()</span> instead. This applies to both chessboard.js and chessboard3.js.
+                WARNING: Some browsers will not actually render the piece in its new location until this method returns, so do not run off with the event thread at this point! Post any long synchronous routines using <span>setTimeout()</span> instead. This applies to both ChessBoard3.js and ChessBoard33.js.
             </td>
         </tr>
     </table>
@@ -754,7 +754,7 @@
             <td>Takes one argument, <span>square</span>, e.g. <span>'e8'</span>.</td>
             <td>
                 Highlights the square.<br>
-                This method is not supported in chessboard.js, but there is a <a href="http://chessboardjs.com/examples#5003">workaround:</a>
+                This method is not supported in ChessBoard3.js, but there is a <a href="http://ChessBoard3js.com/examples#5003">workaround:</a>
                 <pre class="prettyprint">var greySquare = function(square) {
       var squareEl = $('#board .square-' + square);
       var background = '#a9a9a9';
@@ -806,7 +806,7 @@
                 Takes one optional <span>string</span> argument, <span>'fen'</span>.
             </td>
             <td>
-                Returns the current position object in chessboard.js format, unless the <span>'fen'</span> argument is given, in which case it returns the position as a FEN string.
+                Returns the current position object in ChessBoard3.js format, unless the <span>'fen'</span> argument is given, in which case it returns the position as a FEN string.
             </td>
         </tr>
         <tr>
@@ -828,7 +828,7 @@
             <td>none</td>
             <td>
                 Removes all highlights from the board that were set by calling <span>greySquare()</span>.<br>
-                This method is not supported in chessboard.js, but there is a <a href="http://chessboardjs.com/examples#5003">workaround:</a>
+                This method is not supported in ChessBoard3.js, but there is a <a href="http://ChessBoard3js.com/examples#5003">workaround:</a>
                 <pre class="prettyprint">var removeGreySquares = function() {
       $('#board .square-55d63').css('background', '');
     };</pre>
@@ -994,7 +994,7 @@
     </table>
 </article>
 <footer id="footer">
-    <p>Copyright 2016 Jason Tiscione; chessboard3.js is released under the MIT license. The repository for this project is on <a href="https://github.com/jtiscione/chessboard3js">GitHub.</a></p>
+    <p>Copyright 2016 Jason Tiscione; ChessBoard33.js is released under the MIT license. The repository for this project is on <a href="https://github.com/jtiscione/ChessBoard33js">GitHub.</a></p>
     <p>Please send questions, comments, criticisms to <i>&#116;&#105;&#115;&#099;&#105;&#111;&#110;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;.</i></p>
 </footer>
 </body>
